@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DR.BlazorLeaflet.Samples.Se
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SampleSites", "SampleSites", "{4F1D2839-54EB-46E7-99C9-D178FCED201B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DR.BlazorLeaflet.Samples", "DR.BlazorLeaflet.Sample.Components\DR.BlazorLeaflet.Samples.csproj", "{86060860-ABEC-4467-9547-9FF457146F78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DR.BlazorLeaflet.Samples", "DR.BlazorLeaflet.Sample.Components\DR.BlazorLeaflet.Samples.csproj", "{86060860-ABEC-4467-9547-9FF457146F78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DR.BlazorLeaflet.Samples.Client", "DR.BlazorLeaflet.Samples.Client\DR.BlazorLeaflet.Samples.Client.csproj", "{44047390-B48C-4CFB-A362-1E19C7918D61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DR.BlazorLeaflet.Samples.Client", "DR.BlazorLeaflet.Samples.Client\DR.BlazorLeaflet.Samples.Client.csproj", "{44047390-B48C-4CFB-A362-1E19C7918D61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DR.BlazorLeaflet.Samples.MAUI", "DR.BlazorLeaflet.Samples.MAUI\DR.BlazorLeaflet.Samples.MAUI.csproj", "{BA6DECD4-A5D8-4328-A642-152B417E3F33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,12 @@ Global
 		{44047390-B48C-4CFB-A362-1E19C7918D61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44047390-B48C-4CFB-A362-1E19C7918D61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44047390-B48C-4CFB-A362-1E19C7918D61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA6DECD4-A5D8-4328-A642-152B417E3F33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA6DECD4-A5D8-4328-A642-152B417E3F33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA6DECD4-A5D8-4328-A642-152B417E3F33}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BA6DECD4-A5D8-4328-A642-152B417E3F33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA6DECD4-A5D8-4328-A642-152B417E3F33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA6DECD4-A5D8-4328-A642-152B417E3F33}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +51,7 @@ Global
 		{772B0403-F9CD-469A-9ED5-D060D32AE6DD} = {4F1D2839-54EB-46E7-99C9-D178FCED201B}
 		{86060860-ABEC-4467-9547-9FF457146F78} = {4F1D2839-54EB-46E7-99C9-D178FCED201B}
 		{44047390-B48C-4CFB-A362-1E19C7918D61} = {4F1D2839-54EB-46E7-99C9-D178FCED201B}
+		{BA6DECD4-A5D8-4328-A642-152B417E3F33} = {4F1D2839-54EB-46E7-99C9-D178FCED201B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {25793D1A-41C7-4799-96BF-C43E0DFF8D2A}
