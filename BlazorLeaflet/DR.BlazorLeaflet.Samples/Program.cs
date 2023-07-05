@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace DR.BlazorLeaflet.Samples
+namespace DR.BlazorLeaflet.Samples.Server
 {
     public class Program
     {
