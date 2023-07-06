@@ -22,7 +22,7 @@ jobs:
 
       # Publish the site
       - name: Publish
-        run: dotnet publish DR.BlazorLeaflet.Samples.Client/DR.BlazorLeaflet.Samples.Client.csproj -c:Release -o:public -p:GHPages=true -f:net7.0
+        run: dotnet publish BlazorLeaflet/DR.BlazorLeaflet.Samples.Client/DR.BlazorLeaflet.Samples.Client.csproj -c:Release -o:public -p:GHPages=true -f:net7.0
 
       # Deploy the site
       - name: Deploy
