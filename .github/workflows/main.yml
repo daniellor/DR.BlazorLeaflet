@@ -1,33 +1,34 @@
-name: Deploy Blazor WASM to GitHub Pages
+name: github pages
 
 on:
-    push:
-        branches: [main]
+  push:
+    branches:
+      - main
 
 jobs:
-    deploy-to-github-pages:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the code
+      - uses: actions/checkout@v2
 
-            - name: Setup .NET Core SDK ver 7
-              uses: actions/setup-dotnet@v1
-              with:
-                  dotnet-version: 7.x
-                  include-prerelease: true
+      # Install .NET Core SDK
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: 7.0.x
+      - name: Install .NET WebAssembly Tools
+        run: dotnet workload install wasm-tools
 
-            - name: Publish .NET Core Project
-              run: dotnet publish BlazorLeaflet/DR.BlazorLeaflet.Samples.Client/DR.BlazorLeaflet.Samples.Client.csproj -c Release -o release --nologo
+      # Publish the site 
+      - name: Publish
+        run: dotnet publish BlazorLeaflet/DR.BlazorLeaflet.Samples.Client/DR.BlazorLeaflet.Samples.Client.csproj -c:Release -o:public -p:GHPages=true -f:net7.0
 
-            - name: copy index.html to 404.html
-              run: cp release/wwwroot/index.html release/wwwroot/404.html
+      # Deploy the site
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: public/wwwroot
+          force_orphan: true
 
-            - name: Add .nojekyll file
-              run: touch release/wwwroot/.nojekyll
-
-            - name: Commit wwwroot to GitHub Pages
-              uses: JamesIves/github-pages-deploy-action@v4
-              with:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  BRANCH: gh-pages
-                  FOLDER: release/wwwroot
