@@ -23,7 +23,11 @@ jobs:
       # Publish the site 
       - name: Publish
         run: dotnet publish BlazorLeaflet/DR.BlazorLeaflet.Samples.Client/DR.BlazorLeaflet.Samples.Client.csproj -c:Release -o:public -p:GHPages=true -f:net7.0
-
+    
+    # changes the base-tag in index.html from '/' to 'BlazorGitHubPagesDemo' to match GitHub Pages repository subdirectory
+      - name: Change base-tag in index.html from / to DR.BlazorLeaflet
+        run: sed -i 's/<base href="\/" \/>/<base href="\/DR.BlazorLeaflet\/" \/>/g' public/wwwroot/index.html
+        
       # Deploy the site
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
