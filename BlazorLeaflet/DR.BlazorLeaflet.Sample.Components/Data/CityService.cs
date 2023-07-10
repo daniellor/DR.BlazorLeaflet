@@ -12,7 +12,7 @@ namespace DR.BlazorLeaflet.Samples.Data
         {
             new City
             {
-                CoatOfArmsImageUrl = "https://upload.wikimedia.org/wikipedia/commons/1/19/ROU_Bucharest_CoA.png",
+                CoatOfArmsImageUrl = "_content/DR.BlazorLeaflet.Samples/images/ROU_Bucharest_CoA.png",
                 Name = "Bucharest",
                 Country = "Romania",
                 Description = "Bucharest is the capital of Romania, also called <b>București</b> in romanian.",
@@ -20,7 +20,7 @@ namespace DR.BlazorLeaflet.Samples.Data
             },
             new City
             {
-                CoatOfArmsImageUrl = "https://upload.wikimedia.org/wikipedia/commons/f/fa/Grand_CoA_Warsaw.png",
+                CoatOfArmsImageUrl = "_content/DR.BlazorLeaflet.Samples/images/Grand_CoA_Warsaw.png",
                 Name = "Warsaw",
                 Country = "Poland",
                 Description = "Warsaw is the capital of Poland, also called <b>Warszawa</b> in polish.",
@@ -28,7 +28,7 @@ namespace DR.BlazorLeaflet.Samples.Data
             },
             new City
             {
-                CoatOfArmsImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Oslo_komm.svg/1200px-Oslo_komm.svg.png",
+                CoatOfArmsImageUrl = "_content/DR.BlazorLeaflet.Samples/images/Oslo_komm.png",
                 Name = "Oslo",
                 Country = "Norway",
                 Description = "Oslo is the capital of Norway, also called <b>Oslo</b> in norwegian.",
