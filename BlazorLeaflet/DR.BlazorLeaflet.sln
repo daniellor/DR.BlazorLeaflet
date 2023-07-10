@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DR.BlazorLeaflet.Samples", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DR.BlazorLeaflet.Samples.Client", "DR.BlazorLeaflet.Samples.Client\DR.BlazorLeaflet.Samples.Client.csproj", "{44047390-B48C-4CFB-A362-1E19C7918D61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DR.BlazorLeaflet.Samples.MAUI", "DR.BlazorLeaflet.Samples.MAUI\DR.BlazorLeaflet.Samples.MAUI.csproj", "{BA6DECD4-A5D8-4328-A642-152B417E3F33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DR.BlazorLeaflet.Samples.MAUI", "DR.BlazorLeaflet.Samples.MAUI\DR.BlazorLeaflet.Samples.MAUI.csproj", "{BA6DECD4-A5D8-4328-A642-152B417E3F33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

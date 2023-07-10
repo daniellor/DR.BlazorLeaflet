@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.JSInterop;
 using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Threading.Tasks;
 using Rectangle = DR.BlazorLeaflet.Models.Rectangle;
@@ -38,6 +37,7 @@ namespace DR.BlazorLeaflet
         {
             return layer switch
             {
+                WmsLayer wms => jsRuntime.InvokeVoidAsync($"{_BaseObjectContainer}.addWmsLayer", mapId, wms, CreateLayerReference(mapId, wms)),
                 TileLayer tileLayer => jsRuntime.InvokeVoidAsync($"{_BaseObjectContainer}.addTilelayer", mapId, tileLayer, CreateLayerReference(mapId, tileLayer)),
                 MbTilesLayer mbTilesLayer => jsRuntime.InvokeVoidAsync($"{_BaseObjectContainer}.addMbTilesLayer", mapId, mbTilesLayer, CreateLayerReference(mapId, mbTilesLayer)),
                 ShapefileLayer shapefileLayer => jsRuntime.InvokeVoidAsync($"{_BaseObjectContainer}.addShapefileLayer", mapId, shapefileLayer, CreateLayerReference(mapId, shapefileLayer)),

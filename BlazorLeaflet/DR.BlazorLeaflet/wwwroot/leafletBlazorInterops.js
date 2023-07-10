@@ -159,6 +159,19 @@ window.leafletBlazor = {
         const geoJsonLayer = L.geoJson(geoDataObject, options);
         addLayer(mapId, geoJsonLayer, geodata.id);
     },
+    addWmsLayer: function (mapId, wms, objectReference) {
+        const layer = L.tileLayer.wms(wms.baseUrl, {
+            layers: wms.layers.join(','),
+            styles: wms.styles.join(','),
+            crs: createCrs(wms.crs),
+            attribution: wms.attribution,
+            format: wms.imageFormat,
+            transparent: wms.isTransparent,
+            version: wms.wmsVersion,
+            uppercase: wms.useUppercase
+        });
+        addLayer(mapId, layer, wms.id);
+    },
     removeLayer: function (mapId, layerId) {
         const remainingLayers = layers[mapId].filter((layer) => layer.id !== layerId);
         const layersToBeRemoved = layers[mapId].filter((layer) => layer.id === layerId); // should be only one ...
@@ -240,6 +253,21 @@ function createIcon(icon) {
     })
 }
 
+function createCrs(crs) {
+    if (!crs)
+        return L.CRS.EPSG3857;
+
+    switch (crs.code) {
+        case "EPSG:3395":
+            return L.CRS.EPSG3395;
+        case "EPSG:3857":
+            return L.CRS.EPSG3857;
+        case "EPSG:4326":
+            return L.CRS.EPSG4326;
+    }
+
+    return null;
+}
 function shapeToLatLngArray(shape) {
     var latlngs = [];
     shape.forEach(pts => {

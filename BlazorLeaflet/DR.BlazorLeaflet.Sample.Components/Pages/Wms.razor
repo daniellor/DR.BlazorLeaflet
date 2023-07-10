@@ -1,0 +1,45 @@
+﻿@page "/wms"
+
+@using BlazorLeaflet.Models
+@using BlazorLeaflet.Models.Events
+@inject IJSRuntime jsRuntime
+<div class="d-flex flex-column">
+
+    <div>
+        <h1>WMS TileLayer</h1>
+
+        <p>A WMS layer sample <a href="https://www.mundialis.de/en/">Mundialis</a>.</p>
+    </div>
+    
+    <div class="flex-grow-1">
+        <LeafletMap Map="_map" Height="80vh" />
+    </div>
+</div>
+@code
+{
+    private Map _map;
+    private LatLng _markerLatLng = new LatLng { Lat = 47f, Lng = 2f };
+
+    protected override void OnInitialized()
+    {
+        _map = new Map(jsRuntime)
+            {
+                Center = _markerLatLng,
+                Zoom = 4.8f
+            };
+
+        _map.OnInitialized += () =>
+        {
+            _map.AddLayer(new WmsLayer("http://ows.mundialis.de/services/service?")
+                {
+                    Layers = new[] { "TOPO-WMS,OSM-Overlay-WMS" },
+                    Styles = new string[] { },
+                    ImageFormat = "image/png",
+                    IsTransparent = true,
+                    UseUppercaseParameters = true,
+                    WmsVersion = "1.3.0"
+                });
+        };
+    }
+}
+  
