@@ -3,23 +3,22 @@
 @using DR.BlazorLeaflet.Models
 @inject CityService cityService
 @inject IJSRuntime jsRuntime
-
-<h1>Blazor Leaflet</h1>
-
-<div class="form-inline m-2">
-    <div class="form-group mb-2">
-        <label>Tell me more about </label>
-        <input class="form-control ml-2 mr-2" placeholder="city name" @bind="CityName" />
+<div class="d-flex flex-column">
+    <div class="form-inline p-2">
+        <h1>Blazor Leaflet</h1>
+        <div class="form-group mb-2">
+            <label>Tell me more about </label>
+            <input class="form-control ml-2 mr-2" placeholder="city name" @bind="CityName" />
+        </div>
+        <button class="btn btn-primary mb-2" @onclick="FindCity">Search</button>
+        <button class="btn btn-primary mb-2" @onclick="ZoomMap">Zoom</button>
+        <button class="btn btn-primary mb-2" @onclick="PanToNY">Pan to New York</button>
     </div>
-    <button class="btn btn-primary mb-2" @onclick="FindCity">Search</button>
-    <button class="btn btn-primary mb-2" @onclick="ZoomMap">Zoom</button>
-    <button class="btn btn-primary mb-2" @onclick="PanToNY">Pan to New York</button>
+    <div class="flex-grow-1">
+        <LeafletMap Map="_map" Height="80vh" />
+    </div>
+    
 </div>
-
-<div style="height: 500px; width: 500px;">
-    <LeafletMap Map="_map" />
-</div>
-
 @code
 {
 

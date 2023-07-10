@@ -3,25 +3,26 @@
 @using DR.BlazorLeaflet.Models
 @using DR.BlazorLeaflet.Models.Events
 @inject IJSRuntime jsRuntime
+<div class="d-flex flex-column">
+    <div>
+        <h1>Blazor Leaflet</h1>
 
-<h1>Blazor Leaflet</h1>
+        <p>
+            This page demos the ability to use custom Zoom In/Out buttons instead of
+            Leaflet's built-in controls.
+            <br />
+            You can also hold <kbd>shift</kbd> to zoom faster.
+        </p>
 
-<p>
-    This page demos the ability to use custom Zoom In/Out buttons instead of
-    Leaflet's built-in controls.
-    <br />
-    You can also hold <kbd>shift</kbd> to zoom faster.
-</p>
-
-<div class="btn-group mb-2" role="group">
-    <button type="button" class="btn btn-secondary" @onclick="(e => _map?.ZoomIn(e))">Zoom in</button>
-    <button type="button" class="btn btn-secondary" @onclick="(e => _map?.ZoomOut(e))">Zoom out</button>
+        <div class="btn-group mb-2" role="group">
+            <button type="button" class="btn btn-secondary" @onclick="(e => _map?.ZoomIn(e))">Zoom in</button>
+            <button type="button" class="btn btn-secondary" @onclick="(e => _map?.ZoomOut(e))">Zoom out</button>
+        </div>
+    </div>
+    <div class="flex-grow-1">
+        <LeafletMap Map="_map" Height="80vh" />
+    </div>
 </div>
-
-<div style="height: 500px; width: 500px;">
-    <LeafletMap Map="_map" />
-</div>
-
 @code
 {
     private Map _map;
