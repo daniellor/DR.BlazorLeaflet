@@ -55,6 +55,13 @@ namespace DR.BlazorLeaflet
         public bool ZoomControl { get; set; } = true;
 
         /// <summary>
+        /// Whether control is initialized.
+        /// <para/>
+        /// Defaults to true.
+        /// </summary>
+        public bool IsInitialized => _isInitialized;
+
+        /// <summary>
         /// Event raised when the component has finished its first render.
         /// </summary>
         public event Action OnInitialized;

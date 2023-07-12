@@ -149,6 +149,9 @@ window.leafletBlazor = {
         const geoDataObject = JSON.parse(geodata.geoJsonData);
         var options = {
             ...createInteractiveLayer(geodata),
+            style(feature) {
+                return feature.properties && feature.properties.style;
+            },
             title: geodata.title,
             bubblingMouseEvents: geodata.isBubblingMouseEvents,
             onEachFeature: function onEachFeature(feature, layer) {
