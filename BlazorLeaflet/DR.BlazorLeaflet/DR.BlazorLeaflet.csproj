@@ -4,17 +4,15 @@
     <TargetFramework>net7.0</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
     <Authors>Mihai Stan, Daniel Romanowski</Authors>
-	 <Company>dotLink Daniel Romanowski</Company>
+    <Company>dotLink Daniel Romanowski</Company>
     <Description>BlazorLeaflet is a wrapper offering easy-to-use Blazor components that expose the Leaflet API in C#.</Description>
     <Copyright>Mihai Stan, Daniel Romanowski</Copyright>
     <PackageProjectUrl></PackageProjectUrl>
     <RepositoryUrl>https://github.com/daniellor/DR.BlazorLeaflet</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>blazor, leaflet, c#, js, interop</PackageTags>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageLicenseExpression></PackageLicenseExpression>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <LangVersion>9</LangVersion>
-	<StaticWebAssetsEnabled>false</StaticWebAssetsEnabled>
   </PropertyGroup>
 
 
