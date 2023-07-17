@@ -3,7 +3,6 @@
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
-    <Version>7.0.0.1</Version>
     <Authors>Mihai Stan, Daniel Romanowski</Authors>
 	 <Company>dotLink Daniel Romanowski</Company>
     <Description>BlazorLeaflet is a wrapper offering easy-to-use Blazor components that expose the Leaflet API in C#.</Description>
