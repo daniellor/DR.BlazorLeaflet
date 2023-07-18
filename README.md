@@ -27,13 +27,14 @@ Check out the samples project to learn how to use it.
 Install the package in the target project:
 
 ```
-dotnet add package BlazorLeaflet
+dotnet add package DR.BlazorLeaflet
 ```
 
 In your `_Host.cshtml` (Blazor Server) or `index.html` (Blazor WebAssembly), reference the interoperability script in the `<head>` element like so:
 
 ```html
-<script src="_content/BlazorLeaflet/leafletBlazorInterops.js"></script>
+    <script src="_content/DR.BlazorLeaflet/leaflet/leaflet.js"></script>
+    <script src="_content/DR.BlazorLeaflet/leafletBlazorInterops.js"></script>
 ```
 
 You can now use the components and the rest of the library.
@@ -44,8 +45,8 @@ Create the map
 
 ```html
 <!-- You must wrap the map component in a container setting its actual size. -->
-<div id="mapContainer" style="width: 300px; height: 300px;">
-    <LeafletMap Map="_map" />
+<div id="mapContainer" >
+    <LeafletMap Map="_map" Height="80vh" />
 </div>
 ```
 
@@ -88,4 +89,4 @@ _map.FitBounds(new PointF(45.943f, 24.967f), new PointF(46.943f, 25.967f), maxZo
 
 # Contribute
 
-The `master` branch is used as the development branch. If you are looking for a specific release, check the tags. If you are willing to contribute, fork this repository, and create your own branch from master, preferably give it a meaningful name, regarding your change or the issue that you are targeting. For large modifications, create an issue before, and a WIP pull request. Always rebase before review requests.
+The `main` branch is used as the development branch. If you are looking for a specific release, check the tags. If you are willing to contribute, fork this repository, and create your own branch from master, preferably give it a meaningful name, regarding your change or the issue that you are targeting. For large modifications, create an issue before, and a WIP pull request. Always rebase before review requests.
